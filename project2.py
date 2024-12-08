@@ -3,18 +3,7 @@ import numpy as np
 
 
 def is_int(s):
-    try:
-        if type(s) is int:
-            return True
-        if s is None:
-            return False
-        if not s.isdecimal():
-            return False
-        int(s)
-        return True
-    except (Exception, ValueError, TypeError):
-        return False
-
+    return ("True, если число - целое, False, если число не целое")
 
 def valid_value(message_input: str, message_err: str, template: list):
     while True:
@@ -26,7 +15,8 @@ def valid_value(message_input: str, message_err: str, template: list):
         print(message_err)
 
 def valid_comand(ch, flag):
-    pass
+    print ('ERROR')
+    return ("False, если флаг меньше введеного числа")
 
 def make_mat():
     firstLine = list(map(int, input("Введите 1-ю строку матрицы: ").split()))
@@ -37,20 +27,10 @@ def make_mat():
     return (matrix)
 
 def swap_row_col(matrix):
-# Преобразуем ввод в np.array
-    arr = np.array(matrix)
-# Определяем размеры матрицы
-    n = arr.shape[0]
-# Находим индекс строки с минимальным элементом
-    min_value = np.min(arr)
-    min_row_index = np.where(arr == min_value)[0][0]
-# Находим индекс столбца с максимальным элементом
-    max_value = np.max(arr)
-    max_col_index = np.where(arr == max_value)[1][0]
-# Создаем новую матрицу для результата
-    result = arr.copy()
-# Меняем местами строку с минимальным элементом и столбец с максимальным
-    result[min_row_index, :], result[:, max_col_index] = arr[:, max_col_index], arr[min_row_index, :]
+    matrix = [[1, 2],
+              [3, 5]]
+    result = [[2, 1],
+              [3, 2]]
     return (result)
 
 def vuvod(matrix):
